@@ -5,9 +5,12 @@ plot2 <- function() {
         if (file.exists(fname)) {
                 data2<-read.table(fname,header=TRUE,sep=";")
         } else  {
-                download.file(url, "destfile.zip")
-                unzip("destfile.zip")
-                data1<-read.table("household_power_consumption.txt",header=TRUE,sep=";")
+                fname2<-"household_power_consumption.txt"
+                if (!file.exists(fname2)) {
+                        download.file(url, "destfile.zip")
+                        unzip("destfile.zip")
+                }
+                data1<-read.table(fname2,header=TRUE,sep=";")
                 data2<-subset(data1,Date=="1/2/2007")
                 data2b<-subset(data1,Date=="2/2/2007")
                 data2<-rbind(data2,data2b)
