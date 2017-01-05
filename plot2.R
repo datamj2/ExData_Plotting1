@@ -1,5 +1,5 @@
 plot2 <- function() {
-        
+        x
         fname<-"household_power_consumption_subset.txt"
         
         if (file.exists(fname)) {
