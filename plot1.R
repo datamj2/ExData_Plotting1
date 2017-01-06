@@ -2,7 +2,7 @@ plot1 <- function() {
         # NOTE: this function will look for "household_power_consumption.txt" in the working directory 
         # and download if not found. It will then load, subset and save the data in "household_power_consumption_subset.txt"
         # for use by any of the "plot" functions.
-        x
+        
         
         fname<-"household_power_consumption_subset.txt"
         
