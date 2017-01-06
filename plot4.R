@@ -1,7 +1,7 @@
 plot4 <- function() {
         # NOTE: this function will look for "household_power_consumption.txt" in the working directory 
-        # and download if not found. It will then load, subset and save the data in "household_power_consumption_subset.txt"
-        # for use by any of the "plot" functions. 
+        # and download if not found. It will then load, subset and save the data in a file called
+        # "household_power_consumption_subset.txt for use by any of the "plot" functions. 
         
         
         fname<-"household_power_consumption_subset.txt"
@@ -10,6 +10,7 @@ plot4 <- function() {
                 data2<-read.table(fname,header=TRUE,sep=";")
         } else  {
                 fname2<-"household_power_consumption.txt"
+                url<-"https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
                 if (!file.exists(fname2)) {
                         download.file(url, "destfile.zip")
                         unzip("destfile.zip")
